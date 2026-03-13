@@ -174,4 +174,22 @@ This serves as both a learning archive and a long-term reference I will continue
 
 
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
 
+## 6. Permissions & Ownership
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `sudo chown username:groupname filename` | changing the user and group owners of a file. | `sudo chown deploy:devops app.log` | change both user and group owner of a log file used by a deployment process |
+| `sudo chown username` | Changing the own user owner of a file. | `sudo chown kathy script.sh` | transfer ownership of a deployment script to a specific user |
+| `sudo chgrp groupname` | Changing the group owning a file. | `sudo chgrp developers project.conf` | assign a shared configuration file to the developers group |
+| `sudo chmod u+-[r/w/x] filename` | Giving read or write or execute permission to a user for a file. | `sudo chmod u+x deploy.sh` | allow the file owner to execute a deployment script |
+| `sudo chmod g+-[r/w/x] filename` | Giving read or write or execute permission to a group for a file. | `sudo chmod g+w shared.log` | allow a team group to write to a shared log file |
+| `sudo chmod o+-[r/w/x] filename` | Giving read or write or execute permission to Other Users for a file. | `sudo chmod o-r secrets.env` | prevent other users from reading sensitive environment variables |
+| `sudo chmod a+-[r/w/x] filename` | Giving read or write or execute permission to all Users, groups and others for a file. | `sudo chmod a+r public.conf` | allow all users to read a system configuration file |
+| `sudo chmod u=,g=rwx,o=x filename` | universally changing all permissions of a file in one command. | `sudo chmod u=,g=rwx,o=x shared_script.sh` | restrict owner permissions while allowing group execution in a shared environment |
+| `sudo chmod +t filename` | working in a shared directory (like a folder for a group project) and want users to be able to add files but not delete or change each other's files. | `sudo chmod +t /shared/team_directory` | enable sticky bit so users cannot delete files created by others |
+| `umask` | checking the default permission settings of new files and directory. | `umask` | display the default permission mask |
+| `umask -S` | checking the default permission settings in human-readable format. | `umask -S` | display the symbolic representation of the default permissions |
+
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
