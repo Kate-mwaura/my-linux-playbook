@@ -59,3 +59,29 @@ This serves as both a learning archive and a long-term reference I will continue
 |  |  | `rm -r` | removing a directory and all the files in it (r)recursively. |
 |  |  | `rm -f` | removing a file by (f) forcefully. |
 |  |  | `rm -rf` | force delete directories recursively without confirmation. [⚠⚠Cautious with this one] |
+---
+
+## 2. File Viewing & Inspection
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `cat` | cat [concatenate]→ show the content of a file. | `cat filex.txt` | |
+|  |  | `cat -n` | print the content of a file and (n)numbering the lines in the file. |
+|  |  | `cat file1 file2` | display multiple files. |
+| `less` | print the context of a large file one page at a time. | `less -N` | print the file content on a single screen and number the lines. |
+|  |  | `n/enter` | next line |
+|  |  | `:b` | back to previous page |
+|  |  | `space/pgUp/pgDn` | navigate the file pages |
+|  |  | `q` | quit. |
+| `more` | print file content in a page at a time unlike less no chance to move back just next. | `more +10 file.txt` | start at line 10. |
+| `head` | print the first 10 lines of a file. | `head -n 20` | '-n' allows you to specify the number of lines you want to display from the top. |
+|  |  | `head -c 50 file.txt` | first 50 characters. |
+|  |  | `head -q file1 file2` | print content for both files. |
+| `tail` | print the last 10 lines of a file. | `tail -n 20` | '-n' allows you to specify the number of lines you want to display from the bottom. |
+|  |  | `tail -c 100 file.txt` | last 100 characters. |
+|  |  | `tail -f server.log` | follow live log. |
+| `nl` | print the content of a file and (n)number (l)lines in the file as output. | `nl -b a` | number all lines in a file. |
+|  |  | `nl -b t` | number non-empty lines in a file. |
+| `wc` | print the number of lines, number of words and number of characters in a file. | `wc -l` | print the number of (l)lines only in a file. |
+|  |  | `wc -w` | print the number of (w) in the file. |
+|  |  | `wc -c` | print the number of (c) characters/letters in a file. |
