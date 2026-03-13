@@ -160,4 +160,18 @@ This serves as both a learning archive and a long-term reference I will continue
 | `sed` | sed is used to replace a certain word in a file with a new one or remove it completely. Essential for words repeated multiple times in a file. | `sed  -i ‘s/pineapple/mango/’ file/path` | [-i →ensures changes are saved in the file, g(global) |
 
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 5. Pipes & Redirection
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `>` | overwrite everything in the file and add new content | | |
+| `>>` | append the file and adds new content below the existing content | | |
+| `|` | pass the output of a command to the next command for execution. | | |
+| `tee` | redirect the output to a file and print the results on the screen. | | |
+|  |  | `tee -a` | append with the file and don't overwrite an existing file |
+
+
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 
