@@ -270,3 +270,36 @@ This serves as both a learning archive and a long-term reference I will continue
 | `umount` | detaching a device from a directory; closing the access loop. | `umount device_name` | unmount a disk device |
 | `mkfs` | making a file system for a device e.g. xfs, ext4. | `mkfs -t ext4 /dev/sdb1` | create an ext4 filesystem on a device |
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 10. Process Management
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `ps` | show processes in the current shell session. | `ps` | show processes running in the current shell session |
+| `pgrep processname` | getting PID of a process. | `pgrep nginx` | get PID of nginx process |
+| `pidof (processname)` | getting PID of a process. | `pidof nginx` | get PID of nginx service |
+| `ps -l` | view a process list in detail including the PPID and Priority. | `ps -l` | display detailed process information including parent process ID |
+| `ps aux` |  | `ps aux` | show all running processes on the system |
+|  |  | `a` | Shows processes for all users, not just your current session. |
+|  |  | `u` | Displays the output in a user-oriented format, providing detailed info like CPU and Memory usage. |
+|  |  | `x` | Includes processes not attached to a terminal (TTY), such as background system daemons like snapfuse or systemd |
+|  |  | `ps aux --sort=-%cpu` | show processes in their cpu usage order. |
+|  |  | `ps aux --sort=-%mem` | show processes in their memory usage order. |
+| `kill` |  | `kill -l` | List of kill commands. |
+|  |  | `kill -2 PID [ctrl+z]` | Interrupt process. |
+|  |  | `kill -9 PID [ctrl+c]` | force kill process. |
+|  |  | `kill -19 PID` | stop/pause process. |
+|  |  | `kill -18 PID` | resume stopped process. |
+| `pkill` |  | `pkill -9 processname [ctrl+c]` | killing processes by name. |
+|  |  | `pkill -9 -u username` | killing all processes being run by a user. |
+| `killall` |  | `killall -u username` | killing all processes being run by a user |
+| `jobs` | viewing running jobs and the PID. | `jobs` | list background jobs in the shell |
+| `bg` | running a process in the background | `bg` | resume a stopped process in the background |
+| `fg` | running a process in the foreground. | `fg` | bring background job to foreground |
+|  |  | `fg %2` | bringing a background process to the foreground. |
+| `nice` | setting the priority number of a new process. | `nice -n 10 command` | start a command with lower CPU priority |
+| `nice -n` | setting the (n)nice number of a new process. | `nice -n 5 tar -czf backup.tar.gz /var/www` | run backup with controlled CPU priority |
+| `renice` | setting the priority value of an existing process. | `renice 5 1234` | change priority of running process |
+|  |  | `sudo renice -n 0 -p PID` | setting the priority and nice value of an existing process referencing the PID of the process. |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
