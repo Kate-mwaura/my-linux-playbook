@@ -336,3 +336,31 @@ This serves as both a learning archive and a long-term reference I will continue
 |  |  | `sudo ip addr del [ip_no] dev [interface_name]` | removing an ip address from the server. |
 |  |  | `ip route show` | print routing table. |
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 12. Archiving & Compression
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `tar` | archiving/bundling directories & files together into one single file. | `tar -c` | (c)Create a new archive. |
+|  |  | `tar -v` | (v)Verbose :: shows you the list of files being packed. |
+|  |  | `tar -x` | Extract the contents :: unarchive a file. |
+|  |  | `tar -z` | compress :: create a g[z]ipped archive to make the file smaller. |
+|  |  | `tar -f` | (f)File :: tells tar the next word is the name of the file to create. |
+|  |  | `tar -t` | view what's inside the archive without having to unarchive it. |
+|  |  | `tar -r` | archive a directory recursively including all the subdirectories. |
+|  |  | `tar -czvf [new_file_name.tar] [file_to_compress]` | create a compressed tar archive. |
+| `gzip` | compressing/uncompressing files N:B Not Folders. | `gzip [file_name]` | compress a file. |
+|  |  | `gzip -k [file_name]` | create a compressed file of the file and also (k)keep the original. |
+|  |  | `gzip -r [directory_name]` | compress each file in a directory. |
+|  |  | `zcat [filename.gz]` | view the content of a zipped file without having to unzip it. |
+| `gunzip` | uncompress a file to its original format. | `gunzip [compressed_file_name]` | uncompress a file. |
+| `zip` | compress and bundle files or folders into a zip archiver. | `zip [name_of_new_file] [files_to_put_inside]` | compress files into a zip archive. |
+|  |  | `zip [path/to/compressed.zip] [path/to/file_or_directory1] [path/to/file_or_directory2 …]` | compress files or directories into a zip archive. |
+|  |  | `zip -r [compressed.zip] [folder name]` | zip everything inside the folder. |
+|  |  | `zip -e` | prompts you for a password to protect the file |
+|  |  | `zip -d [compressed.zip] [file_to_delete]` | Removes a specific file from inside the zip. |
+|  |  | `zip -u` | updates by adding new files to an existing zip without recreating it. |
+| `unzip` | unzip a zipped archive. | `unzip` | unzip a zipped archive. |
+|  |  | `unzip -l` | to list what's inside a file without having to unzip |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
