@@ -2,7 +2,7 @@
 
 A personal Linux command reference built throughout my DevOps journey.
 
-Every command in this repository has been studied, tested, and practiced in real Linux environments as I continue developing my skills in DevOps, system administration, and cloud infrastructure.
+Every command in this repository has been studied, tested, and practiced in real Linux environments as I continue developing my skills in DevOps and cloud infrastructure.
 
 This serves as both a learning archive and a long-term reference I will continue building throughout my career..
 
@@ -59,6 +59,7 @@ This serves as both a learning archive and a long-term reference I will continue
 |  |  | `rm -r` | removing a directory and all the files in it (r)recursively. |
 |  |  | `rm -f` | removing a file by (f) forcefully. |
 |  |  | `rm -rf` | force delete directories recursively without confirmation. [⚠⚠Cautious with this one] |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 ---
 
 ## 2. File Viewing & Inspection
@@ -85,6 +86,7 @@ This serves as both a learning archive and a long-term reference I will continue
 | `wc` | print the number of lines, number of words and number of characters in a file. | `wc -l` | print the number of (l)lines only in a file. |
 |  |  | `wc -w` | print the number of (w) in the file. |
 |  |  | `wc -c` | print the number of (c) characters/letters in a file. |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 ---
 
 ## 3. Search & Discovery
@@ -115,6 +117,7 @@ This serves as both a learning archive and a long-term reference I will continue
 | `which` | search the executable path of a command. |  |  |
 | `whereis` | search for a path of a command and returns all relevant paths. |  |  |
 | `who -b` | view when the system was started. |  |  |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 ---
 
 ## 4. Text Processing Power
@@ -158,7 +161,6 @@ This serves as both a learning archive and a long-term reference I will continue
 |  |  | `diff -B` | ignore blank lines. |
 | `awk` | awk is a command used to filter and extract a certain column of data from a file | `awk ‘{print $column_no}’ file/path` | This will print words in the third column in a file extracted from every line. |
 | `sed` | sed is used to replace a certain word in a file with a new one or remove it completely. Essential for words repeated multiple times in a file. | `sed  -i ‘s/pineapple/mango/’ file/path` | [-i →ensures changes are saved in the file, g(global) |
-
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 ---
 
@@ -171,8 +173,6 @@ This serves as both a learning archive and a long-term reference I will continue
 | `|` | pass the output of a command to the next command for execution. | | |
 | `tee` | redirect the output to a file and print the results on the screen. | | |
 |  |  | `tee -a` | append with the file and don't overwrite an existing file |
-
-
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
 ---
 
@@ -181,15 +181,42 @@ This serves as both a learning archive and a long-term reference I will continue
 | Command | My Definition / Logic | Flag / Example | Flag Definition |
 |---|---|---|---|
 | `sudo chown username:groupname filename` | changing the user and group owners of a file. | `sudo chown deploy:devops app.log` | change both user and group owner of a log file used by a deployment process |
-| `sudo chown username` | Changing the own user owner of a file. | `sudo chown kathy script.sh` | transfer ownership of a deployment script to a specific user |
-| `sudo chgrp groupname` | Changing the group owning a file. | `sudo chgrp developers project.conf` | assign a shared configuration file to the developers group |
+| `sudo chown username file_name` | Changing the own user owner of a file. | `sudo chown kathy script.sh` | transfer ownership of a deployment script to a specific user |
+| `sudo chgrp groupname file_name` | Changing the group owning a file. | `sudo chgrp developers project.conf` | assign a shared configuration file to the developers group |
 | `sudo chmod u+-[r/w/x] filename` | Giving read or write or execute permission to a user for a file. | `sudo chmod u+x deploy.sh` | allow the file owner to execute a deployment script |
 | `sudo chmod g+-[r/w/x] filename` | Giving read or write or execute permission to a group for a file. | `sudo chmod g+w shared.log` | allow a team group to write to a shared log file |
 | `sudo chmod o+-[r/w/x] filename` | Giving read or write or execute permission to Other Users for a file. | `sudo chmod o-r secrets.env` | prevent other users from reading sensitive environment variables |
-| `sudo chmod a+-[r/w/x] filename` | Giving read or write or execute permission to all Users, groups and others for a file. | `sudo chmod a+r public.conf` | allow all users to read a system configuration file |
+| `sudo chmod a+-[r/w/x] filename` | Giving read or write or execute permission to all Users; owner, groups and others for a file. | `sudo chmod a+r public.conf` | allow all users to read a system configuration file |
 | `sudo chmod u=,g=rwx,o=x filename` | universally changing all permissions of a file in one command. | `sudo chmod u=,g=rwx,o=x shared_script.sh` | restrict owner permissions while allowing group execution in a shared environment |
 | `sudo chmod +t filename` | working in a shared directory (like a folder for a group project) and want users to be able to add files but not delete or change each other's files. | `sudo chmod +t /shared/team_directory` | enable sticky bit so users cannot delete files created by others |
 | `umask` | checking the default permission settings of new files and directory. | `umask` | display the default permission mask |
 | `umask -S` | checking the default permission settings in human-readable format. | `umask -S` | display the symbolic representation of the default permissions |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 7. Users & Groups
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `cat /etc/passwd` | Viewing all users | `cat /etc/passwd` | display all system users |
+| `cat /etc/group` | Viewing all groups | `cat /etc/group` | display all system groups |
+| `su - username` | Switching users | `su - deploy` | switch to the deploy user account |
+| `sudo adduser/(useradd -m)` | Adding a new user | `sudo adduser devops` | create a new DevOps user account |
+| `sudo addgroup/groupadd` | Adding a new group | `sudo groupadd developers` | create a developers group |
+| `sudo deluser/userdel` | Deleting a user | `sudo userdel olduser` | remove a user account from the system |
+| `sudo delgroup/groupdel` | Deleting a group. | `sudo groupdel oldteam` | remove an unused system group |
+| `sudo usermod -u username` | changing the UID of a user. | `sudo usermod -u 1050 deploy` | modify the UID of a deployment user |
+| `sudo usermod -d directory/path username` | changing the home location of a user. | `sudo usermod -d /srv/deploy deploy` | change the home directory of a user |
+| `sudo usermod -l oldname newname` | changing the username of a user. | `sudo usermod -l devops_engineer devops` | rename a system user |
+| `sudo usermod -g groupname username` | Adding user to a new group. | `sudo usermod -g developers kathy` | set the primary group of a user |
+| `sudo usermod -G groupname username` | Overwriting users group with current group. | `sudo usermod -G docker deploy` | replace user group memberships |
+| `sudo usermod -aG groupname username` | Adding user to an additional group without overwriting the previous group. | `sudo usermod -aG docker kathy` | add a user to the docker group |
+| `sudo gpasswd -d username groupname` | Deleting user from a group. | `sudo gpasswd -d deploy docker` | remove user from docker group |
+| `sudo setfacl -m u:username:r/w/x /file/path` | set file access control list on files. | `sudo setfacl -m u:nginx:r /var/log/nginx/access.log` | allow nginx user read access to log file |
+| `sudo usermod username --shell /bin/bash` | changing user from shell to bash. | `sudo usermod deploy --shell /bin/bash` | assign bash shell to a user |
+| `sudo useradd -r accname` | creating a system user. | `sudo useradd -r prometheus` | create system account for a monitoring service |
+| `sudo useradd -M username` | creating a user without a home directory. | `sudo useradd -M ci-runner` | create service user without login environment |
+| `sudo useradd -s path/nologin username` | creating a non-interactive user. | `sudo useradd -s /usr/sbin/nologin backupsvc` | create non-interactive backup user |
+| `sudo useradd -r -M -s /usr/sbin/nologin servicename` | creating a service account. | `sudo useradd -r -M -s /usr/sbin/nologin node_exporter` | create secure service account for monitoring |
 
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
