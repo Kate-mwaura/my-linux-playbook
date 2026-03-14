@@ -394,3 +394,17 @@ This serves as both a learning archive and a long-term reference I will continue
 | `cal` | display info on the calendar. | `cal` | show current month calendar |
 |  |  | `cal -y` | show the entire calendar year. |
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 14. Package Management
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `apt` | tool to install, update, remove, and manage software packages. | `apt update` | update installed packages to the latest version. |
+|  |  | `apt upgrade` | upgrade installed packages to the latest version. |
+|  |  | `apt install` | install and update a package to the latest version. |
+|  |  | `apt remove` | remove / uninstall a package. |
+|  |  | `apt search` | search availability list of a program before installing it. |
+|  |  | `apt purge` | total Wipe. Deletes the program AND all its settings. |
+|  |  | `apt show` | display detailed information about a package before installing it. |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
