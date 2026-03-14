@@ -236,3 +236,37 @@ This serves as both a learning archive and a long-term reference I will continue
 | `passwd -x days username` | adding an expiration day to a passwd. | `sudo passwd -x 120 deploy` | set password expiration after 120 days |
 | `passwd -d username` | deleting a user's passwd. | `sudo passwd -d tempuser` | remove password requirement from a temporary user |
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 9. Disk & System Monitoring
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `du` | estimate and summarize file and directory space usage. | `du /var/log` | estimate disk usage of the /var/log directory |
+|  |  | `du -h` | show disk usage in human readable format. |
+|  |  | `du -s` | show the total (s)summary disk space in use. |
+|  |  | `du -ah` | show (a)all files and directories disk space including hidden files in human readable format. |
+|  |  | `du -hs /path/dir1 /path/dir2` | show the disk size of multiple path directories and total size summary. |
+|  |  | `du -hsc /path1/ /path2/` | show the disk size of multiple path directories and (c)count the total. |
+|  |  | `du -h --max-depth n /path/` | show the disk usage of a directory and its subdirectories to n'th depth. |
+|  |  | `du -sh *` | show which directories are consuming most space. |
+| `df` | shows the overview of the file system disk space usage. | `df` | show overall disk usage summary |
+|  |  | `df -h` | show the file system disk usage report in human-readable format. |
+|  |  | `df -T` | show the disk usage report and type of filesystems. |
+|  |  | `df -x filesystem` | show disk usage report but exclude this filesystem in the command. |
+| `free` | show the memory and swap report in human-readable format. | `free -h` | show memory and swap report |
+| `top` | show real-time running processes, their cpu and memory usage. | `top` | display active processes in real time |
+|  |  | `M` | Sort processes by Memory usage (useful for finding "memory leaks"). |
+|  |  | `P` | Sort processes by CPU usage (the default). |
+|  |  | `k` | Kill a process (it will ask you for the Process ID or PID). |
+|  |  | `q` | Quit top and return to the terminal. |
+| `htop` | show real-time running processes, and their cpu and memory usage in a more advanced way compared to top. In htop you can modify your data appearance, monitor and also manage processes. | `htop` | interactive process viewer |
+| `uptime` | show how long the system has been running and load average. | `uptime` | display system running time and load |
+|  |  | `uptime -s` | show what time the system was started. |
+| `lsblk` | list block devices (disks and partitions) | `lsblk` | display disks and partitions layout |
+| `blkid` | list the block devices identity numbers. [UUID] | `blkid` | show UUID of connected block devices |
+| `mount` | list mounted devices on the system | `mount` | show mounted file systems |
+|  |  | `mount disk_name directory/path` | attaching a device to a directory to be able to input data, view or retrieve data. |
+| `umount` | detaching a device from a directory; closing the access loop. | `umount device_name` | unmount a disk device |
+| `mkfs` | making a file system for a device e.g. xfs, ext4. | `mkfs -t ext4 /dev/sdb1` | create an ext4 filesystem on a device |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
