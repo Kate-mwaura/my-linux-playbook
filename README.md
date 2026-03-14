@@ -364,3 +364,33 @@ This serves as both a learning archive and a long-term reference I will continue
 | `unzip` | unzip a zipped archive. | `unzip` | unzip a zipped archive. |
 |  |  | `unzip -l` | to list what's inside a file without having to unzip |
 <p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
+---
+
+## 13. System Information
+
+| Command | My Definition / Logic | Flag / Example | Flag Definition |
+|---|---|---|---|
+| `whoami` | show which user I'm currently logged in as or which server I'm currently working on. | `whoami` | display the current logged-in user |
+| `who` | show all users are currently logged in the system. | `who` | list users currently logged into the system |
+| `id` | check user information, ie UID, GID, and groups | `id` | show UID, GID, and group membership of a user |
+| `uname` | print information about the system you are currently running. | `uname` | basic system information |
+|  |  | `uname -a` | prints all available system information in one line. |
+|  |  | `uname -m` | print the hardware architecture. |
+|  |  | `uname -v` | print the kernel version and the date it was compiled. |
+|  |  | `uname -n` | prints the network hostname of the machine. |
+|  |  | `uname -r` | prints the kernel release version. |
+| `history` | show the history of commands that have been previously run. | `history` | display command history |
+|  |  | `!!` | repeat the last command in the history log. |
+|  |  | `!hist_cmd_no` | run a command using its history number. |
+| `date` | print or set system date and time | `date` | show current system date and time |
+|  |  | `date "+%Y"` | +%Y :: four-digit year |
+|  |  | `date "+%m"` | +%m :: Month |
+|  |  | `date "+%d"` | +%d :: day of month |
+|  |  | `date "+%H"` | +%H :: Hour |
+|  |  | `date "+%M"` | +%M :: Minute |
+|  |  | `date "+%S"` | +%S :: second |
+|  |  | `date "+%F"` | +%F :: full Date |
+|  |  | `date "+%T"` | +%T :: full Time |
+| `cal` | display info on the calendar. | `cal` | show current month calendar |
+|  |  | `cal -y` | show the entire calendar year. |
+<p align="right"><a href="#kathys-linux-command-reference-for-devops">⬆ Back to Top</a></p>
