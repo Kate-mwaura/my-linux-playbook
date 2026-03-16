@@ -226,6 +226,7 @@ This serves as both a learning archive and a long-term reference I will continue
 | Command | My Definition / Logic | Flag / Example | Flag Definition |
 |---|---|---|---|
 | `sudo chage -l username` | viewing account passwd aging details list. | `sudo chage -l deploy` | display password aging information for the deploy user |
+| `sudo chage -E username` | set account expiration date to EXPIRE_DATE. | `sudo chage -E 2027-03-28 kathy` | set kathy's account expiry date to march 28 2027 |
 | `sudo chage -M days username` | setting when a Password expires. | `sudo chage -M 90 deploy` | set password to expire after 90 days |
 | `sudo chage -M -1 username` | setting password expiry to never. | `sudo chage -M -1 serviceuser` | disable password expiration for a service account |
 | `sudo chage -W days username` | setting number of days of warning before password expires. | `sudo chage -W 7 deploy` | warn the user 7 days before password expiration |
